@@ -1,0 +1,99 @@
+* {
+    color: black;
+}
+
+h1 {
+    color: orange;
+}
+
+div {
+    color:green;
+}
+
+p {
+    color: #1100ff;
+    font-family: 'DejaVu Sans', sans-serif;
+    font-size: 22;
+    font-weight: bold;
+    text-align: center;
+}
+
+img {
+    height: auto;
+    width: 500px;
+}
+
+.alert-text {
+    color:red;
+}
+
+#title {
+    background-color: red;
+}
+
+.read,
+.unread {
+    color: white;
+    background-color: black;
+}
+
+.read {
+    /* several unique declarations */
+}
+
+.unread {
+    /* several unique declarations */
+}
+
+.subsection.header {
+    color:red;
+}
+
+.subsection#preview {
+    color: blue;
+}
+
+.ancestor .contents {
+    background-color: cadetblue;
+}
+
+.subsection {
+    color: blue;
+}
+
+.main .list {
+    color: red;
+}
+
+.list #subsection {
+    background-color: yellow;
+    color: blue;
+}
+
+.main .list #subsection {
+    color: red;
+}
+
+.class.second-class {
+    font-size: 12px;
+}
+
+.class > .second-class {
+    font-size: 24px;
+}
+
+#parent {
+    color: red;
+}
+
+.child {
+    color: blue;
+}
+
+.alert {
+    color: red;
+}
+
+.warning {
+    color: yellow;
+}
