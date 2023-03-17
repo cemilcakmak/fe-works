@@ -1,0 +1,21 @@
+.odds {
+    background-color: #FF9999;
+}
+
+.bold-font {
+    font-weight: bold;
+}
+
+.middle-font {
+    font-size: 24px;
+}
+
+#id-second {
+    font-size: 36px;
+    color: #0000ff
+}
+
+#id-fourth {
+    background-color: #90ee90;
+    font-weight: bold;
+}
