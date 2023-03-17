@@ -1,0 +1,14 @@
+.btn-approve {
+    background-color: #039487;
+    color: white;
+}
+
+.btn-deny {
+    background-color: #f44336;
+    color: whitesmoke
+}
+
+.btn-approve, .btn-deny {
+    font-size: 28px;
+    font-family: 'Times New Roman', Times, sans-serif
+}
