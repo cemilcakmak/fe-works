@@ -23,6 +23,11 @@ h3 {
     margin-left: 40px; 
 }
 
+
+h2 + p {
+    font-style: italic;
+} 
+
 img {
     display: block;
     margin-left: auto;
