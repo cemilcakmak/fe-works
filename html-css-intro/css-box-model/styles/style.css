@@ -1,0 +1,24 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-size: 40px;
+}
+
+.box-one {
+    background-color: salmon;
+    padding: 10px;
+    height: 100px;
+    width: 100px;
+    border: 30px solid plum;
+    margin: 60px;
+}
+
+.box-two {
+    background-color: lightblue;
+    border: 0 solid lightgreen;
+    padding: 10px;
+    height: 100px;
+    width: 100px;
+    border: 30px solid plum;
+    margin: 60px;
+}
