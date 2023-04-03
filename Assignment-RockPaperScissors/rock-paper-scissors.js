@@ -1,6 +1,12 @@
 console.log("Hello World!")
 const choices = ["Rock", "Paper", "Scissors"];
 
+function game() {
+    for (i = 0; i < 5; i++) {
+        play(prompt(), getComputerChoice());
+    }
+}
+
 function getComputerChoice() {
     return choices[Math.floor(Math.random() * choices.length)];
 }
@@ -51,4 +57,4 @@ function play(playerSelection, computerSelection) {
     printResult(result, playerSelection, computerSelection);
 }
 
-play("Scissors", getComputerChoice());
+game();
