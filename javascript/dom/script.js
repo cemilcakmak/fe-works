@@ -22,3 +22,18 @@ const subP = document.createElement('p');
 subP.textContent = "ME TOO!";
 div.appendChild(subP);
 container.appendChild(div);
+
+const btn = document.querySelector('#btn');
+btn.onclick = () => alert("Hello World");
+
+const thirdBtn = document.querySelector('#thirdBtn');
+thirdBtn.addEventListener('click', alertFunction);
+
+const eventBtn = document.querySelector('#eventBtn');
+eventBtn.addEventListener('click', function (e) {
+    console.log(e);
+});
+
+function alertFunction() {
+    alert("Hello World! from external function");
+}
