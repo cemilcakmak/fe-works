@@ -1,60 +1,96 @@
-console.log("Hello World!")
 const choices = ["Rock", "Paper", "Scissors"];
-
-function game() {
-    for (i = 0; i < 5; i++) {
-        play(prompt(), getComputerChoice());
-    }
-}
 
 function getComputerChoice() {
     return choices[Math.floor(Math.random() * choices.length)];
 }
 
+let playerScore = 0;
+let computerScore = 0;
+
+const body = document.querySelector('body');
+const buttons = document.querySelectorAll('button');
+buttons.forEach(button => {
+    button.addEventListener('click', handleEvent)
+});
+
+function handleEvent(event) {
+    play(event.target.id, getComputerChoice());
+}
+
 function printResult(number, playerSelection, computerSelection) {
-    if (typeof number === 'string') {
-        console.log("Unexpected input");
-    } else if (number < 0) {
-        console.log("You Lose!", playerSelection, "loses against", computerSelection);
+    const roundResultDiv = document.createElement('div');
+    let result;
+    if (number < 0) {
+        result = "You Lose!", playerSelection, "loses against", computerSelection;
     } else if (number > 0) {
-        console.log("You Win!", playerSelection, "beats", computerSelection);
+        result = "You Win!", playerSelection, "beats", computerSelection;
     } else {
-        console.log("Draw!");
+        result = "Draw!"
     }
+    roundResultDiv.textContent = result
+    body.appendChild(roundResultDiv);
 }
 
 function play(playerSelection, computerSelection) {
     let result;
     if (playerSelection.toLowerCase() === "rock") {
         if (computerSelection.toLowerCase() === "paper") {
-            result = -1;
+            computerScore++;
+            result = "Computer wins.";
         } else if (computerSelection.toLowerCase() === "scissors") {
-            result = 1;
+            playerScore++;
+            result = "Player wins.";
         } else {
-            result = 0;
+            result = "Draw";
         }
     }
     else if (playerSelection.toLowerCase() === "paper") {
         if (computerSelection.toLowerCase() === "scissors") {
-            result = -1;
+            computerScore++;
+            result = "Computer wins.";
         } else if (computerSelection.toLowerCase() === "rock") {
-            result = 1;
+            playerScore++;
+            result = "Player wins.";
         } else {
-            result = 0;
+            result = "Draw";
         }
     }
     else if (playerSelection.toLowerCase() === "scissors") {
         if (computerSelection.toLowerCase() === "rock") {
-            result = -1;
+            computerScore++;
+            result = "Computer wins.";
         } else if (computerSelection.toLowerCase() === "paper") {
-            result = 1;
+            playerScore++;
+            result = "Player wins.";
         } else {
-            result = 0;
+            result = "Draw";
         }
     } else {
         result = "Error"
     }
-    printResult(result, playerSelection, computerSelection);
+    const roundResultDiv = document.createElement('div');
+    roundResultDiv.textContent = result;
+    body.appendChild(roundResultDiv);
+
+    console.log("player score", playerScore);
+    console.log("computer score", computerScore);
+
+    if (playerScore >= 5) {
+        announceWinner('PLAYER');
+    }
+    if (computerScore >= 5) {
+        announceWinner('COMPUTER');
+    }
+
 }
 
-game();
+function announceWinner(winner) {
+    playerScore = 0;
+    computerScore = 0;
+    buttons.forEach(button => {
+        button.removeEventListener('click', handleEvent);     
+    });
+    const announcementDiv = document.createElement('div');
+    announcementDiv.textContent = `Winner is = ${winner}`;
+    body.appendChild(announcementDiv);
+}
